@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Montserrat:wght@500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+body {
+    background-color: #ffffff;
+
+}
+
+
+.listProdutos {
+    position: absolute;
+    z-index: 1;
+    height: 1500px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    display: none;
+}
+
+#tabelaList {
+    margin-top: 10rem;
+    width: 90%;
+}
+
+.tabelaProdutos {
+    max-width: 500px;
+    width: 100%;
+}
+
+.btnProdutos {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.btnProdutos:hover {
+    opacity: 0.5;
+}
+
+.titulo-produtos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-items: center;
+    justify-content: flex-start
+}
+
+.titulo-header {
+    max-width: 90%;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: 1.5vw;
+    border-radius: 7px;
+
+
+}
+
+.titulo-header span {
+    color: #3A3C40;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.conteudo {
+    padding-top: 3vh;
+    max-width: 710px;
+    width: 90%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-color: #3f0f3d49;
+    border-radius: 20px;
+    border-style: solid;
+    flex-wrap: wrap;
+
+}
+
+.camposPrincipais {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 3vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.linhasCampos {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    align-items: center;
+
+
+}
+
+.grupoInput {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-results {
+    list-style: none;
+    position: absolute;
+    margin-right: 5px;
+    top: 44%;
+    width: 9%;
+
+
+
+    background: #e6e6e6;
+
+    z-index: 1;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.bordaSearch {
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+}
+
+
+.result-item {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px;
+}
+
+.result-item:hover {
+    background: #cdcdcd;
+}
+
+.grupo9 {
+    margin-left: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.radioPrioridade {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 5px;
+    border-color: #cdcdcd;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.grupoPrioridade {
+    display: flex;
+    padding-left: 2px;
+}
+
+.grupoCategoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAdd {
+    width: 30px;
+    height: 30px;
+}
+
+.btnAdd:hover {
+    cursor: pointer;
+    scale: 1.5;
+    transition-duration: 1000ms;
+}
+
+.grupoMotivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dadosPrincipais {
+    border: 1px solid #cdcdcd;
+    border-radius: 8px;
+
+}
+
+.dados-content {
+    width: 100%;
+}
+
+.titulo {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #363636;
+}
+
+/* ITENS */
+.itensRequisicao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    border-color: #cdcdcd;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.camposItens {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+    margin: 0 auto;
+}
+
+.linhaAdicionarItens {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    padding: 2vh 0;
+    gap: 15px;
+}
+
+.modalEstoque {
+    display: none;
+    width: 80%;
+    max-width: 200px;
+    height: 100px;
+    position: absolute;
+    background: #f6f2ca;
+    border-radius: 5px;
+    border: 1px solid #fbf215;
+    top: 50%;
+    left: 53%;
+    box-sizing: border-box;/
+}
+
+.modalDiv {
+    display: flex;
+    margin: 7px 0 0 10px;
+    gap: 10px;
+}
+
+.modalDiv p {
+    font-size: 10px;
+}
+
+.quadrado {
+    width: 13.641px;
+    height: 12.284px;
+    border: 1px solid #000;
+}
+
+.modal-verde {
+    background: #00d222;
+}
+
+.modal-amarelo {
+    background: #fbf215;
+}
+
+.modal-vermelho {
+    background: #92030c;
+}
+
+.grupoStatusEstoque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+#corEstoque {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background: #00d222;
+}
+
+.grupoBtnInserirItens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.tabelaItens {
+    margin-top: 10px;
+    max-width: 90%;
+    display: flex;
+    margin: 20px 0;
+    border: 1px solid #cdcdcd;
+}
+
+
+.tabelaItens .box-codigo {
+    width: 100px;
+    height: 100px;
+}
+
+.tabelaItens p {
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.box-descricao {
+    width: 200px;
+}
+
+.box-descricao p {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.box {
+    border: 1px solid #cdcdcd;
+}
+
+.box-unidade {
+    width: 88px;
+}
+
+.box-unidade p {
+    text-align: left;
+}
+
+.box-prices {
+    width: 130px;
+}
+
+.box-prices p {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.box-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.input-total {
+    width: 8rem;
+    height: 1.5rem;
+}
+
+.input-total {
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+tr,
+td {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #3A3C40;
+}
+
+th {
+    background-color: #f7f7f7;
+    text-align: center;
+    font-weight: 700;
+}
+
+.excluir {
+    color: red;
+    cursor: pointer;
+}
+
+.codigo {
+    max-width: 3rem;
+}
+
+.descricao {
+    max-width: 15rem;
+}
+
+.qtd {
+    max-width: 5rem;
+}
+
+.un {
+    max-width: 4rem;
+}
+
+.preco {
+    max-width: 5px;
+}
+
+.total {
+    width: 100px;
+}
+
+.input-total {
+    width: 100px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.footer h1 {
+    color: rgb(3, 3, 3);
+    font-size: 1rem;
+    padding-left: 10px;
+}
+
+.footer svg {
+    height: 50px;
+    width: 30px;
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .camposPrincipais {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .linhasCampos {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .linhaAdicionarItens {
+        display: flex;
+    }
+
+    table {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    .codigo,
+    .descricao,
+    .qtd,
+    .un,
+    .preco {
+        max-width: auto;
+    }
+
+    .total {
+        width: 50px;
+    }
+
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    .grupo9 {
+        margin-left: 0 !important;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+    .modalEstoque {
+        width: 90%;
+        /* Ajuste a largura para telas pequenas */
+        max-width: 200px;
+        /* Remova o tamanho máximo para telas pequenas */
+        top: 75%;
+        left: 25%;
+    }
+
+
+
+
+    .main {
+        height: 100%;
+    }
+
+    #search-results {
+        top: 48%;
+        width: 40%;
+    }
+
+
+
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Almoxarifado</title>
+  <link rel="stylesheet" href="/assets/styles/css/requisicao.css" />
+  <link rel="stylesheet" href="/assets/styles/css/inputRequisicao.css" />
+  <link rel="stylesheet" href="/assets/styles/css/header.css">
+  <!-- <link rel="stylesheet" href="/assets/styles/styles.css"/> -->
+
+</head>
+
+<body>
+    <header class="flex-space-between-1">
+        <div class="hamburger-icon" id="icon">
+            <div class="icon-1" id="a"></div>
+            <div class="icon-2" id="b"></div>
+            <div class="icon-3" id="c"></div>
+            <div class="clear"></div>
+        </div>
+
+        <nav id="nav">
+
+            <ul class="flex-space-between g-2" >
+                <li><a>Produtos</a></li>
+                <li><a>Requisição</a></li>
+                <li><a>Beachmarking Log</a></li>
+                <li><a>Configurações</a></li>
+            </ul>
+        </nav>
+        
+        <button class="btnSair btnRed">Sair</button>
+    </header>
+
+    <div class="menu"></div>
+    <div class="main">
+        <div class="listProdutos" id="listProdutos">
+            <table class="tabelaProdutos" id="tabelaList">
+                <thead>
+                <tr class="">
+                    <p style="text-align: center; font-weight: 900;">LISTA DE PRODUTOS</p>
+
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>Qtd</th>
+                    <th>Un</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                    <th id="fecharList" style="color: red;cursor: pointer;">Fechar</th>
+
+
+                </tr>
+                </thead>
+                <tbody id="tabela-list-body">
+
+                </tbody>
+                <tfoot>
+                <th>Total</th>
+                <th id="totalListGeral"></th>
+                </tfoot>
+
+
+            </table>
+
+        </div>
+
+        <div class="titulo-header"><span>Novo Pedido de Requisição</span></div>
+
+        <div class="conteudo">
+        <div class="titulo">
+            <span>Dados Principais | Requisição Nº </span>
+            <input min="0" name='validated' class="greenInput" data-isnumber="true" type="number" id="inpNumero" />
+        </div>
+        <div class="dadosPrincipais">
+            <form class="dados-content">
+
+            <div class="camposPrincipais">
+                <div class="camposPrincipaisLinha1 linhasCampos">
+                <div class="grupo1 grupoInput">
+                    <span>ID.</span>
+                    <input type="number" min="0" data-isnumber="true" name="validated" class="greenInput"
+                    id="idDepartamento" />
+                </div>
+                <div class="grupo2 grupoInput">
+                    <span>Departamento</span>
+                    <input disabled type="text" name="validated" id="departamento" />
+                </div>
+                <div class="grupo3 grupoInput">
+                    <span>Data</span>
+                    <input type="date" name="validated" id="dataRequesicao" />
+                </div>
+                </div>
+                <div class="camposPrincipaisLinha2 linhasCampos">
+                <div class="grupo1 grupoInput">
+                    <span>ID Func.</span>
+                    <input type="number" name="validated" id="idFuncionario" class="greenInput" />
+                </div>
+                <div class="grupo2 grupoInput">
+                    <span>Nome Funcionário</span>
+                    <input autocomplete="off" disabled type="text" id="NomeFuncionario">
+                    <ul id="search-results"></ul>
+                    </input>
+
+                </div>
+                <div class="grupo3 grupoInput">
+                    <span>Cargo</span>
+                    <input disabled type="text" name="validated" id="cargo" />
+                </div>
+                </div>
+                <div class="camposPrincipaisLinha3 linhasCampos">
+                <div class="grupo7 grupoInput">
+                    <span>Categoria Motivo</span>
+                    <div class="grupoCategoria">
+                    <select id="categoriaMotivo"></select>
+                    <img class="btnAdd" src="/assets/img/add.svg" alt="" />
+                    </div>
+                </div>
+                <div class="grupo8 grupoInput">
+                    <span>Motivo</span>
+                    <div class="grupoMotivo">
+                    <select disabled id="Motivo"></select>
+                    <img class="btnAdd" src="/assets/img/add.svg" alt="" />
+                    </div>
+                </div>
+                <form>
+                    <div class="grupo9 grupoInput">
+                    <span>Nível de Prioridade</span>
+                    <div id="check-null" class="radioPrioridade">
+                        <div class="grupoPrioridade">
+                        <input class="chkPrioridade urgente" type="radio" name="prioridade" id="urgente"
+                            value="urgente" />
+                        <span>Urgente</span>
+                        </div>
+                        <div class="grupoPrioridade ">
+                        <input class="chkPrioridade medio" type="radio" name="prioridade" id="medio" value="medio" />
+                        <span>Médio</span>
+                        </div>
+                        <div class="grupoPrioridade ">
+                        <input class="chkPrioridade baixo" type="radio" name="prioridade" id="baixo" value="baixo" />
+                        <span>Baixo</span>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="titulo">
+            <div class="titulo-produtos">
+            <span>Itens da Requisição </span>
+            <button class="btnProdutos" onclick="showListProducts()" id="btnProdutos">Produtos</button>
+
+            </div>
+
+        </div>
+        <div class="itensRequisicao">
+
+            <div class="itens-container">
+
+            <div class="camposItens">
+                <div class="linhaAdicionarItens">
+                <div class="grupoProduto">
+                    <span>Cod. Produto</span>
+                    <input type="text" min="0" data-isnumber="true" id="CodigoProduto" class="greenInput" />
+
+                </div>
+                <div class="grupoProdutoDescricao">
+                    <span>Descrição</span>
+                    <input disabled type="text" id="DescricaoProduto" />
+                </div>
+                <div class="grupoEstoque">
+                    <span class="label-estoque">Qnt.</span>
+                    <input disabled type="text" id="Estoque" />
+                    <div> </div>
+                </div>
+                <div class="grupoSaida">
+                    <span>Saida</span>
+                    <input disabled data-isnumber="true" type="number" min="0" id="Saida" class="greenInput" />
+                    <div> </div>
+                </div>
+
+                <div class="grupoStatusEstoque">
+                    <div>
+                    <div id="corEstoque"></div>
+                    <div class="modalEstoque">
+                        <div class="modalDiv">
+                        <span class="quadrado modal-verde"></span>
+                        <p id="statusEstoque">Estoque acima, ou igual de 10% do Estoque mínimo</p>
+                        </div>
+                        <div class="modalDiv">
+                        <span class="quadrado modal-amarelo"></span>
+                        <p id="statusEstoqueMinimo">Estoque abaixo de 10% e maior o igual que o Estoque mínimo</p>
+                        </div>
+                        <div class="modalDiv">
+                        <span class="quadrado modal-vermelho"></span>
+                        <p id="statusEstoqueMaximo">Estoque abaixo do Estoque mínimo</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="grupoBtnInserirItens">
+                    <div class="BtnInserirItens" id="BtnInserirItens">
+                    <button id="button-add" type="submit" onclick="adicionarProduto()">Adicionar</button>
+                    </div>
+
+                </div>
+
+                </div>
+                <div class="grupoProdutoError"> </div>
+                <div>
+                <table id="tabela">
+                    <thead>
+                    <tr class="">
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Qtd</th>
+                        <th>Un</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                        <th id="table-deletar">Deletar</th>
+
+                    </tr>
+                    </thead>
+                    <tbody id="tabela-body">
+
+                    </tbody>
+                    <tfoot>
+                </table>
+                <div class="box-total">
+                    <p> Total </p>
+                    <div class="box input-total">
+                    R$
+                    <p id="totalItens"></p>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div>
+            <div class="camposObservacao">
+                <div class="camposBtn">
+                <div class="grupoBtn">
+                    <button onclick="salvarRequisicao()" class="button-save">Salvar</button>
+                    <button onclick="cancelarRequisicao()" class="button-cancel">Cancelar</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+  </form>
+  <script src="/assets/scripts/data/dados.js"></script>
+  <script src="/assets/scripts/modalProdutos.js"></script>
+
+  <script src="/assets/scripts/validacao.js"></script>
+  <script src="/assets/scripts/main.js"></script>
+
+</body>
+
+</html>
