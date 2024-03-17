@@ -54,7 +54,7 @@ body {
 
 
 .main {
-    width: 100vw;
+    /* width: 140vw; */
     height: 100vh;
     display: flex;
     flex-direction: column;
